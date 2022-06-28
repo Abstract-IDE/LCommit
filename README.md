@@ -16,18 +16,20 @@
 ```
 LCommit/
 ├── ...
-├── main.py   - python script file
-├── out/      - directory for results
-│   └── ...
+├── main.py                 - python script file
+├── output/                 - directory for results
+│   └── ...
 ├── ...
-└── urls      - plain text file with repositories urls (put urls of repo to get theirs commits hash)
+└── urls/
+    ├── neovim_plugins.url  - file with neovim plugin's urls
+    └── put_urls_here.url   - plain text file with repositories urls (put urls of repo to get theirs commits hash)
 ```
 
 # Uses
 
 ```
 $ python main.py --help
-usage: main.py [-h] [--lua] [--json] [--out OUT] [--rname RNAME]
+usage: main.py [-h] [--lua] [--json] [--out OUT] [--rname RNAME] [--urls URLS]
 
 options:
   -h, --help            show this help message and exit
@@ -36,6 +38,7 @@ options:
   --out OUT, -o OUT     file name you want to save as
   --rname RNAME, -r RNAME
                         change '.' and '-' to '_' in plugin names ex: plugin.nivm -> plugin_nvim
+  --urls URLS, -u URLS  file containing urls
 ```
 
 <br>
@@ -63,10 +66,12 @@ $ tree
 .
 ├── LICENSE.md
 ├── main.py
-├── out
-│   ├── commits.json
-│   └── commits.lua
+├── output
+│   └── commits.json
+├── README.md
 └── urls
+    ├── neovim_plugins.url
+    └── put_urls_here.url
 
 $ cat out/commits.json
 {
@@ -98,16 +103,18 @@ So, `--json --lua --out commits` means save result as `commits.json` and `commit
 
 # Rules for `urls` file
 
-1. `urls` file must not contain any blank lines
-2. you can provide branch for repo on same line: example:
-
-```txt
+1. you can provide branch name for repo on same line, example:
+```
 https://github.com/wbthomason/packer.nvim           master
 https://github.com/jose-elias-alvarez/null-ls.nvim  0.5.1-compat
 ```
-
-3. if you don't provide branch name, `main` will be used as brance name (which can be untrue for some repo,
+2. if you don't provide branch name, `main` will be used as brance name (which can be not true for some repo,
    so it's batter to provide branch name
+3. line starting with `#` will be ignored (it will treated as comment line), example:
+```
+# this and below line will be ignored
+# https://github.com/wbthomason/packer.nvim           master
+```
 
 # To-do
 
