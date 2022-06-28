@@ -59,7 +59,7 @@ return {
 
 ```
 
-## explaination
+## explanation
 
 ```out``` is output directory which will contain our results <br>
 ```url``` contains the list of urls to repositories <br>
