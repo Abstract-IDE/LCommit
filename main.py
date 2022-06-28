@@ -38,11 +38,12 @@ def make_api(filename, branch="main"):
     with open(filename) as url_list:
         urls = url_list.read().splitlines()
     for url in urls:
-        if len(url.split(" ")) == 2:
-            branch = url[-1]
+        if len(url.split(" ")) > 1:
+            branch = url.split("/")[-1].split(" ")[-1]
 
         url = url.split("/")
-        api = f"https://api.github.com/repos/{url[-2]}/{url[-1]}/branches/{branch}"
+        plugin_name = url[-1].split(" ")[0]
+        api = f"https://api.github.com/repos/{url[-2]}/{plugin_name}/branches/{branch}"
         api_urls.append(api)
     return api_urls
 
