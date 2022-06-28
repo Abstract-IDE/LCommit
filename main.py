@@ -24,11 +24,19 @@ parser.add_argument(
     default=True,
     help="change '.' and '-' to '_' in plugin names ex: plugin.nivm -> plugin_nvim",
 )
+parser.add_argument(
+    "--urls",
+    "-u",
+    type=str,
+    default="./urls/put_urls_here.url",
+    help="file containing urls",
+)
 
 lua = parser.parse_args().lua
 json = parser.parse_args().json
 rname = parser.parse_args().rname
 output = parser.parse_args().out
+urls_file = parser.parse_args().urls
 
 # --------------------------
 
@@ -38,6 +46,9 @@ def make_api(filename, branch="main"):
     with open(filename) as url_list:
         urls = url_list.read().splitlines()
     for url in urls:
+        # ignore comment line
+        if url.split("#")[0] == "":
+            continue
         if len(url.split(" ")) > 1:
             branch = url.split("/")[-1].split(" ")[-1]
 
@@ -98,7 +109,7 @@ def main():
         Path(save_location).mkdir(parents=True)
 
     commits = {}
-    for url in make_api("./urls"):
+    for url in make_api(urls_file):
         commits[get_plugin_name(url)] = get_commit(url)
 
     if lua:
