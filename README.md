@@ -1,4 +1,5 @@
 # Uses
+
 ```
 $ python main.py --help
 usage: main.py [-h] [--lua] [--json] [--out OUT] [--rname RNAME]
@@ -11,9 +12,11 @@ options:
   --rname RNAME, -r RNAME
                         change '.' and '-' to '_' in plugin names ex: plugin.nivm -> plugin_nvim
 ```
+
 <br>
 
 ## Example
+
 ```zsh
 
 $ git clone https://github.com/pullape/LCommit
@@ -61,25 +64,22 @@ return {
 
 ## explanation
 
-```out``` is output directory which will contain our results <br>
-```url``` contains the list of urls to repositories <br>
-```--json``` and ```--lua``` means save result as json and lua file.```--out commits``` means result file name is ```commits```.  <br>
-So, ```--json --lua --out commits``` means save result as ```commits.json``` and ```commits.lua```
+`out` is output directory which will contain our results <br>
+`url` contains the list of urls to repositories <br>
+`--json` and `--lua` means save result as json and lua file.`--out commits` means result file name is `commits`. <br>
+So, `--json --lua --out commits` means save result as `commits.json` and `commits.lua`
 
 <br><br>
 
+# Rules for `urls` file
 
-# Rules for ```urls``` file
-1. ```urls``` file must not contain any blank lines
+1. `urls` file must not contain any blank lines
 2. you can provide branch for repo on same line: example:
+
 ```txt
 https://github.com/wbthomason/packer.nvim           master
 https://github.com/jose-elias-alvarez/null-ls.nvim  0.5.1-compat
 ```
-3. if you don't provide branch name, ```main``` will be used as brance name (which can be untrue for some repo, so it's batter to provide branch name
 
-
-
-
-
-
+3. if you don't provide branch name, `main` will be used as brance name (which can be untrue for some repo,
+   so it's batter to provide branch name
