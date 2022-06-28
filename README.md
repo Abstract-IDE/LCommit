@@ -104,13 +104,16 @@ So, `--json --lua --out commits` means save result as `commits.json` and `commit
 # Rules for `urls` file
 
 1. you can provide branch name for repo on same line, example:
+
 ```
 https://github.com/wbthomason/packer.nvim           master
 https://github.com/jose-elias-alvarez/null-ls.nvim  0.5.1-compat
 ```
+
 2. if you don't provide branch name, `main` will be used as brance name (which can be not true for some repo,
    so it's batter to provide branch name
 3. line starting with `#` will be ignored (it will treated as comment line), example:
+
 ```
 # this and below line will be ignored
 # https://github.com/wbthomason/packer.nvim           master
