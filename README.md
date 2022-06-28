@@ -1,4 +1,19 @@
-# Example
+# Uses
+```
+$ python main.py --help
+usage: main.py [-h] [--lua] [--json] [--out OUT] [--rname RNAME]
+
+options:
+  -h, --help            show this help message and exit
+  --lua                 save file as lua file
+  --json                save file as json file
+  --out OUT, -o OUT     file name you want to save as
+  --rname RNAME, -r RNAME
+                        change '.' and '-' to '_' in plugin names ex: plugin.nivm -> plugin_nvim
+```
+<br>
+
+## Example
 ```zsh
 
 $ git clone https://github.com/pullape/LCommit
