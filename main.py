@@ -25,7 +25,7 @@ parser.add_argument(
     help="change '.' and '-' to '_' in plugin names ex: plugin.nivm -> plugin_nvim",
 )
 parser.add_argument(
-    "--urls",
+    "--urlfile",
     "-u",
     type=str,
     default="./urls/put_urls_here.url",
@@ -36,7 +36,7 @@ lua = parser.parse_args().lua
 json = parser.parse_args().json
 rname = parser.parse_args().rname
 output = parser.parse_args().out
-urls_file = parser.parse_args().urls
+urls_file = parser.parse_args().urlfile
 
 # --------------------------
 
@@ -83,7 +83,7 @@ def save_as(filetype, commits):
 
     # save as lua
     if filetype == "lua":
-        filename = f"./out/{output}.lua"
+        filename = f"./output/{output}.lua"
         with open(filename, "w") as file:
             file.write("\nreturn {")
 
@@ -96,7 +96,7 @@ def save_as(filetype, commits):
 
     # save as json
     if filetype == "json":
-        filename = f"./out/{output}.json"
+        filename = f"./output/{output}.json"
         with open(filename, "w") as file:
             file.write(js.dumps(commits, sort_keys=True, indent=4))
 
@@ -104,7 +104,7 @@ def save_as(filetype, commits):
 def main():
 
     # create dir to save our result
-    save_location = "./out"
+    save_location = "./output"
     if not Path(save_location).exists():
         Path(save_location).mkdir(parents=True)
 
