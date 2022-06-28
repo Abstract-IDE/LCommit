@@ -1,3 +1,28 @@
+<br>
+
+## Table Of Contents
+
+- [Project Stracture](#project-stracture)
+- [Uses](#uses)
+  - [Example](#example)
+  - [Explanation](#explanation)
+- [Rules for `urls` file](#rules-for-urls-file)
+- [To-do](#to-do)
+
+<br>
+
+# Project Stracture
+
+```
+LCommit/
+├── ...
+├── main.py   - python script file
+├── out/      - directory for results
+│   └── ...
+├── ...
+└── urls      - plain text file with repositories urls (put urls of repo to get theirs commits hash)
+```
+
 # Uses
 
 ```
@@ -62,7 +87,7 @@ return {
 
 ```
 
-## explanation
+### Explanation
 
 `out` is output directory which will contain our results <br>
 `url` contains the list of urls to repositories <br>
@@ -83,3 +108,7 @@ https://github.com/jose-elias-alvarez/null-ls.nvim  0.5.1-compat
 
 3. if you don't provide branch name, `main` will be used as brance name (which can be untrue for some repo,
    so it's batter to provide branch name
+
+# To-do
+
+...
