@@ -23,7 +23,7 @@ parser.add_argument(
     "-r",
     type=bool,
     default=True,
-    help="change '.' and '-' to '_' in plugin names ex: plugin.nivm -> plugin_nvim",
+    help="True/False, change '.' and '-' to '_' in plugin names ex: plugin.nivm -> plugin_nvim",
 )
 parser.add_argument(
     "--urlfile",
