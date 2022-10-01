@@ -24,6 +24,7 @@ https://github.com/nvim-telescope/telescope-fzf-native.nvim     main
 https://github.com/nvim-telescope/telescope-file-browser.nvim   master
 https://github.com/nvim-telescope/telescope-media-files.nvim    master
 https://github.com/nvim-telescope/telescope-ui-select.nvim      master
+https://github.com/nvim-telescope/telescope-symbols.nvim        master
 https://github.com/JoosepAlviste/nvim-ts-context-commentstring  main
 https://github.com/voldikss/vim-floaterm                        master
 https://github.com/kyazdani42/nvim-web-devicons                 master
@@ -51,5 +52,5 @@ https://github.com/Neevash/awesome-flutter-snippets             master
 https://github.com/dart-lang/dart-vim-plugin                    master
 https://github.com/windwp/nvim-ts-autotag                       main
 https://github.com/nvim-treesitter/nvim-treesitter              master
-https://github.com/lewis6991/impatient.nvim
+https://github.com/lewis6991/impatient.nvim                     main
 https://github.com/kylechui/nvim-surround                       main
